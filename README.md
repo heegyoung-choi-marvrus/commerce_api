@@ -17,10 +17,13 @@ brew 설치후 python3.10 을 설치 한다. (링크 참고: https://formulae.br
 코드 다운 받은 후, 파이참으로 프로젝트를 연다.
 이때 중요한건, python project interpreter 를 위에서 설치한 python3.10 경로로 잡아 주어야 한다.
 그리고 로컬 코드 수정에 용이하도록 FastApi 로 설정한다.
+<img width="982" alt="Screen Shot 2022-04-12 at 12 23 45 AM" src="https://user-images.githubusercontent.com/103478627/162883362-19eb085c-d6ca-4af7-b4af-e6919b120636.png">
+<img width="1054" alt="Screen Shot 2022-04-12 at 12 29 22 AM" src="https://user-images.githubusercontent.com/103478627/162883457-97ca042d-71ea-44d6-9536-ef53f576698e.png">
 
 ### 2. 소스코드 위치 수정하기
 도커로 웹 서버를 띄우기 전 마운트될 소스코드 위치를 수정한다.
 "~/PycharmProjects/commerce_api" 이 부분을 본인 소스코드 로컬 Path 로 변경한다.
+<img width="937" alt="Screen Shot 2022-04-12 at 12 32 06 AM" src="https://user-images.githubusercontent.com/103478627/162883513-4ffc8621-c15f-4787-a999-e4393ee05d92.png">
 
 ### 3. 도커로 웹서버 띄우기
 이후 터미널을 통해 commerce_api 폴더까지 이동한다.
