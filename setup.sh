@@ -1,7 +1,6 @@
 #!/bin/bash
 
 DOCKER="docker"
-DOCKER_COMPOSE="docker-compose"
 IMAGE_NAME="commerce_api"
 VERSION="0.1"
 PORT="8005"
@@ -14,5 +13,4 @@ IP_ADDRESS=$($DOCKER inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}
 until [ "`$DOCKER inspect -f '{{.State.Running}}' $IMAGE_NAME`"=="true" ]; do
   sleep 1;
 done;
-#$DOCKER_COMPOSE -f ~/PycharmProjects/commerce_api/docker-compose-local-db.yml up
 $DOCKER exec -it $IMAGE_NAME uvicorn main:app --reload --host $IP_ADDRESS --port $PORT

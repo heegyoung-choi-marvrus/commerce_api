@@ -1,6 +1,7 @@
 services:
   mysql:
-    image: mysql:5.7
+    image: mysql:8
+    platform: linux/amd64
     container_name: commerce_api_db
     expose:
       - "3306"
