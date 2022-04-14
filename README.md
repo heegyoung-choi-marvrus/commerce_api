@@ -34,19 +34,25 @@ chmod +x ./setup.sh
 docker-compose -f docker-compose-local-db.yml up
 ```
 Datagrip 으로 DB를 연결해 마이그레이션 이후 데이터를 조회할 수 있다. (아래 그림 참고)
+<img width="844" alt="Screen Shot 2022-04-13 at 1 14 21 AM" src="https://user-images.githubusercontent.com/103478627/163318550-76564ab7-0020-454d-afd1-d85073df109c.png">
 
 도커 웹 서버에서, 아래와 같이 _dig mysql_ 을 실행하면 DB 컨테이너와 웹 서버가 연결되어 있음을 확인해 볼 수 있다.
 
 ### 5. Pycharm 가상 환경을 도커로 설정
 파이참 Preference > Build, Execution, Deploy 로 이동해 아래와 같이 새로운 도커 이름을 등록한다.  
 Local Path 는 내 소스코드 위치, Virtual Machine Path 는 소스코드가 마운트 될 위치이다. (2) 번에서 수정한 것과 동일하게 쓰면 된다.  
+<img width="1241" alt="Screen Shot 2022-04-14 at 12 42 08 AM" src="https://user-images.githubusercontent.com/103478627/163318613-74a87ca9-d6d6-4eaa-8974-254d7c301e21.png">
 
 Python Interpreter에 가서 Python Interpreter 를 추가해야 한다. 아래 그림과 같이 Add 를 누른다.
+<img width="1350" alt="Screen Shot 2022-04-14 at 12 57 17 AM" src="https://user-images.githubusercontent.com/103478627/163318678-9bd3567b-dcd7-466b-9965-35dc4fb8e952.png">
 
-그리고 아래와 같이 만들고, Ok 를 눌러주면 도커 웹 서버 안의 설정이 가상환경으로 잡히면서 연결된다. 
+그리고 아래와 같이 방금 만들었던 도커 이미지를 추가하고, Ok 를 눌러주면 도커 웹 서버 안의 설정이 가상환경으로 잡히면서 연결된다.
+<img width="1133" alt="Screen Shot 2022-04-14 at 12 57 56 AM" src="https://user-images.githubusercontent.com/103478627/163318787-5c16f97f-008f-4979-a282-ea834d54e9d1.png">
+<img width="1284" alt="Screen Shot 2022-04-14 at 12 58 09 AM" src="https://user-images.githubusercontent.com/103478627/163318732-234d7fd5-d3fc-4c93-8030-d0c327209c73.png">
 
-### 5. Migration
-웹 서버에서 다음을 실행한다.
+
+### 5. Migration!
+웹 도커 서버에서 다음을 실행한다.
 ```bash
 aerich migrate
 ```
@@ -61,7 +67,7 @@ aerich migrate 혹은 aerich migrate --name add_new_table_or_edit_or_add_column
 aerich upgrade
 ```
 
-### 6. 웹서버 호출해보기
+### 6. 웹 서버 호출해보기
 http://127.0.0.1:8005/hello/testfastapi 를 호출해본다.
 그리고 다른 api 는 아래 문서를 통해 확인해 볼 수 있다.
 ```bash
@@ -70,3 +76,5 @@ http://127.0.0.1:8005/docs
 
 ### 7. git push 전에는 balck 사용
 아래와 같이 black filt/path 로 코드 스타일 자동화를 실행한다.
+<img width="357" alt="Screen Shot 2022-04-14 at 1 10 57 AM" src="https://user-images.githubusercontent.com/103478627/163318945-77b17c9b-d5f5-468b-8b7b-6fe30a3e1d15.png">
+
