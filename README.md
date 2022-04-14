@@ -37,6 +37,7 @@ Datagrip 으로 DB를 연결해 마이그레이션 이후 데이터를 조회할
 <img width="844" alt="Screen Shot 2022-04-13 at 1 14 21 AM" src="https://user-images.githubusercontent.com/103478627/163318550-76564ab7-0020-454d-afd1-d85073df109c.png">
 
 도커 웹 서버에서, 아래와 같이 _dig mysql_ 을 실행하면 DB 컨테이너와 웹 서버가 연결되어 있음을 확인해 볼 수 있다.
+<img width="537" alt="Screen Shot 2022-04-14 at 12 50 58 AM" src="https://user-images.githubusercontent.com/103478627/163319240-a8248e34-a3b1-4985-9da6-5b783af9361a.png">
 
 ### 5. Pycharm 가상 환경을 도커로 설정
 파이참 Preference > Build, Execution, Deploy 로 이동해 아래와 같이 새로운 도커 이름을 등록한다.  
@@ -76,5 +77,6 @@ http://127.0.0.1:8005/docs
 
 ### 7. git push 전에는 balck 사용
 아래와 같이 black filt/path 로 코드 스타일 자동화를 실행한다.
+
 <img width="357" alt="Screen Shot 2022-04-14 at 1 10 57 AM" src="https://user-images.githubusercontent.com/103478627/163318945-77b17c9b-d5f5-468b-8b7b-6fe30a3e1d15.png">
 
