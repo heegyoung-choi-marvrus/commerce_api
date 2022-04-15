@@ -14,4 +14,4 @@ RUN apt-get install python3.10-distutils -y
 RUN python3.10 get-pip.py
 RUN mkdir /commerce_api
 WORKDIR /commerce_api
-RUN pip install fastapi uvicorn requests black tortoise-orm[aiomysql] aerich cryptograhoy
+RUN pip install fastapi uvicorn requests black tortoise-orm[aiomysql] aerich cryptography
