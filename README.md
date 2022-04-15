@@ -37,6 +37,7 @@ Datagrip 으로 DB를 연결해 마이그레이션 이후 데이터를 조회할
 <img width="844" alt="Screen Shot 2022-04-13 at 1 14 21 AM" src="https://user-images.githubusercontent.com/103478627/163318550-76564ab7-0020-454d-afd1-d85073df109c.png">
 
 도커 웹 서버에서, 아래와 같이 _dig mysql_ 을 실행하면 DB 컨테이너와 웹 서버가 연결되어 있음을 확인해 볼 수 있다.
+그리고 database.py 에 있는 connection 정보를 아래 __ANSWER SECTION__ 에 출력된 IP 주소로 수정해 준다.
 <img width="537" alt="Screen Shot 2022-04-14 at 12 50 58 AM" src="https://user-images.githubusercontent.com/103478627/163319240-a8248e34-a3b1-4985-9da6-5b783af9361a.png">
 
 ### 5. Pycharm 가상 환경을 도커로 설정
