@@ -13,4 +13,7 @@ IP_ADDRESS=$($DOCKER inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}
 until [ "`$DOCKER inspect -f '{{.State.Running}}' $IMAGE_NAME`"=="true" ]; do
   sleep 1;
 done;
+$DOCKER exec $IMAGE_NAME pip freeze > requirements.txt
+$DOCKER exec $IMAGE_NAME pip install pre-commit
+$DOCKER exec $IMAGE_NAME pre-commit install
 $DOCKER exec -it $IMAGE_NAME uvicorn main:app --reload --host $IP_ADDRESS --port $PORT
