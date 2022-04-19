@@ -79,5 +79,13 @@ http://127.0.0.1:8005/docs
 ### 7. git add 후 commit 시 코드 스타일 검사가 시행됨
 black 은 자동으로 수정을 해주지만, flake8 의 경우 직접 수정이 필요 할 수 있다.
 스타일링 수정이 되지 않으면 commit 되지 않으므로, 가이드대로 수정하도록 한다.
+
+<img width="931" alt="Screen Shot 2022-04-18 at 11 33 19 PM" src="https://user-images.githubusercontent.com/103478627/163916850-f4b30d1b-535e-4fbc-b95d-778e67b260e5.png">
+
 실패한 내용에 대해 스타일링이 변경된 파일을 git add 로 다시 추가한 뒤,
 다시 commit 한다.
+
+<img width="1062" alt="Screen Shot 2022-04-18 at 11 47 51 PM" src="https://user-images.githubusercontent.com/103478627/163916914-3b10cac4-63cd-43bc-9520-03caf4d39d66.png">
+
+
+
