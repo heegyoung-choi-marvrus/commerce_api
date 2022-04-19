@@ -7,10 +7,10 @@ FastApi 를 사용해 api 서버를 구축합니다. 아래 가이드를 참고�
 * Language: Python3.10
 * OS: Utuntu20.04
 * WSGI/ASGI: uvicorn
-* DB: Mysql8 
+* DB: Mysql8
 
-모든 필요한 디펜던시는 Dockerfile 을 통해 설치됩니다.  
-__만약 사용하는 PC 가 M1 칩이 탑재되지 않은 맥북이라면 docker-compose-local-db.yml 파일에 "platform: linux/amd64" 해당 부분은 지우고 실행해주세요.__  
+모든 필요한 디펜던시는 Dockerfile 을 통해 설치됩니다.
+__만약 사용하는 PC 가 M1 칩이 탑재되지 않은 맥북이라면 docker-compose-local-db.yml 파일에 "platform: linux/amd64" 해당 부분은 지우고 실행해주세요.__
 (M1 탑재된 맥북의 경우 mysql8 버전에 한해 "No Matching Manifest For Linux/Arm64/V8 Docker MySql" 이슈가 아직 해결되지 않아 "platform: linux/amd64" 해당 설정이 필요.)
 
 ### 1. 소스코드 다운받기
@@ -41,8 +41,8 @@ Datagrip 으로 DB를 연결해 마이그레이션 이후 데이터를 조회할
 <img width="537" alt="Screen Shot 2022-04-14 at 12 50 58 AM" src="https://user-images.githubusercontent.com/103478627/163319240-a8248e34-a3b1-4985-9da6-5b783af9361a.png">
 
 ### 5. Pycharm 가상 환경을 도커로 설정
-파이참 Preference > Build, Execution, Deploy 로 이동해 아래와 같이 새로운 도커 이름을 등록한다.  
-Local Path 는 내 소스코드 위치, Virtual Machine Path 는 소스코드가 마운트 될 위치이다. (2) 번에서 수정한 것과 동일하게 쓰면 된다.  
+파이참 Preference > Build, Execution, Deploy 로 이동해 아래와 같이 새로운 도커 이름을 등록한다.
+Local Path 는 내 소스코드 위치, Virtual Machine Path 는 소스코드가 마운트 될 위치이다. (2) 번에서 수정한 것과 동일하게 쓰면 된다.
 <img width="1241" alt="Screen Shot 2022-04-14 at 12 42 08 AM" src="https://user-images.githubusercontent.com/103478627/163318613-74a87ca9-d6d6-4eaa-8974-254d7c301e21.png">
 
 Python Interpreter에 가서 Python Interpreter 를 추가해야 한다. 아래 그림과 같이 Add 를 누른다.
@@ -76,8 +76,6 @@ http://127.0.0.1:8005/hello/testfastapi 를 호출해본다.
 http://127.0.0.1:8005/docs
 ```
 
-### 7. git push 전에는 balck 사용
-아래와 같이 black filt/path 로 코드 스타일 자동화를 실행한다.
-
-<img width="357" alt="Screen Shot 2022-04-14 at 1 10 57 AM" src="https://user-images.githubusercontent.com/103478627/163318945-77b17c9b-d5f5-468b-8b7b-6fe30a3e1d15.png">
-
+### 7. git add 후 commit 시 코드 스타일 검사가 시행됨
+black 은 자동으로 수정을 해주지만, flake8 의 경우 직접 수정이 필요 할 수 있다.
+스타일링 수정이 되지 않으면 commit 되지 않으므로, 가이드대로 수정하도록 한다.
